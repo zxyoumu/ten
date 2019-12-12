@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>10-2</title>
+<style>
+	body{margin:0;padding:0;}
+	.img{
+		position:relative;
+		width:500px;
+		height:400px;
+		margin:0 auto;
+	}
+	.top-left,.top-right{
+		position:absolute;
+		width:500px;
+		height:400px;
+		left:0px;
+		top:0px;
+		background:url('images/scene.png') no-repeat;
+	}
+	.top-left{
+		-webkit-mask:url('images/heart.png') no-repeat;
+		animation: move1 3s 0.2s ease-out forwards;
+	}
+	.top-right{
+		-webkit-mask:url('images/heart.png') right top no-repeat;
+		animation:move2 3s 0.2s ease-out forwards;
+	}
+	@keyframes move1{
+		0%{-webkit-mask:url('images/heart.png') left top no-repeat;}
+		100%{-webkit-mask:url('images/heart.png') center top no-repeat;}
+		
+	}
+	@keyframes move2{
+		0%{-webkit-mask:url('images/heart.png') right top no-repeat;}
+		100%{-webkit-mask:url('images/heart.png') center top no-repeat;}
+	}		
+</style>
+</head>
+
+<body>
+	<div class="img">
+		<div class="top-left"></div>
+		<div class="top-right"></div>
+	</div>
+</body>
+</html>
